@@ -18,6 +18,16 @@
 
 ---
 
+## 📸 Screenshot
+
+<p align="center">
+  <img src="icons/screenshot_popup.png" alt="NoShorts Popup UI" width="320">
+</p>
+
+<p align="center"><em>The extension popup — toggle protection on/off globally or per platform</em></p>
+
+---
+
 ## 🎯 What It Does
 
 **ChromiumNoShorts** is a lightweight browser extension that surgically removes short-form video content from your feed — Shorts shelves, Reels sections, TikTok feeds, and more — while leaving all regular content untouched.
