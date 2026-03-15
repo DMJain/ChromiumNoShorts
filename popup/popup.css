@@ -1,0 +1,300 @@
+/* ============================================
+   ChromiumNoShorts — Popup Stylesheet
+   Premium dark-mode glassmorphism UI
+   ============================================ */
+
+/* --- Reset & Base --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: transparent;
+  width: 380px;
+  overflow: hidden;
+}
+
+/* --- Container --- */
+.popup-container {
+  background: linear-gradient(145deg, #0F0F1A 0%, #1A1A2E 40%, #16213E 100%);
+  color: #E2E8F0;
+  padding: 0;
+  min-height: 100%;
+}
+
+/* --- Header --- */
+.popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 12px;
+  background: linear-gradient(180deg, rgba(108, 60, 225, 0.15) 0%, transparent 100%);
+  border-bottom: 1px solid rgba(108, 60, 225, 0.2);
+}
+
+.logo-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  filter: drop-shadow(0 2px 8px rgba(108, 60, 225, 0.5));
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #A78BFA, #6C3CE1, #3B82F6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+
+.logo-tagline {
+  font-size: 10px;
+  color: #94A3B8;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* --- Toggle Switch --- */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #374151;
+  border-radius: 24px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 3px;
+  bottom: 3px;
+  background: #9CA3AF;
+  border-radius: 50%;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background: linear-gradient(135deg, #6C3CE1, #3B82F6);
+  box-shadow: 0 0 12px rgba(108, 60, 225, 0.4);
+}
+
+.toggle-switch input:checked + .toggle-slider::before {
+  transform: translateX(20px);
+  background: #FFFFFF;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.toggle-switch.master {
+  width: 52px;
+  height: 28px;
+}
+
+.toggle-switch.master .toggle-slider::before {
+  width: 22px;
+  height: 22px;
+}
+
+.toggle-switch.master input:checked + .toggle-slider::before {
+  transform: translateX(24px);
+}
+
+/* --- Status Bar --- */
+.status-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(108, 60, 225, 0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6B7280;
+  transition: all 0.3s ease;
+}
+
+.status-dot.active {
+  background: #10B981;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.status-text {
+  font-size: 12px;
+  font-weight: 500;
+  color: #94A3B8;
+}
+
+/* --- Platforms Section --- */
+.platforms-section {
+  padding: 16px 20px 8px;
+}
+
+.section-title {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #64748B;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* --- Platform Card --- */
+.platform-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  transition: all 0.25s ease;
+  cursor: default;
+}
+
+.platform-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(108, 60, 225, 0.3);
+  transform: translateY(-1px);
+}
+
+.platform-card.disabled {
+  opacity: 0.4;
+}
+
+.platform-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.platform-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+/* X/Twitter icon needs white bg in dark mode */
+.platform-card[data-site="twitter"] .platform-icon {
+  background: #000;
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.platform-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.platform-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #E2E8F0;
+}
+
+.platform-desc {
+  font-size: 10px;
+  color: #64748B;
+  font-weight: 400;
+}
+
+/* --- Stats Bar --- */
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  padding: 14px 20px;
+  margin: 8px 20px;
+  background: linear-gradient(135deg, rgba(108, 60, 225, 0.12), rgba(59, 130, 246, 0.12));
+  border-radius: 12px;
+  border: 1px solid rgba(108, 60, 225, 0.15);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.stat-number {
+  font-size: 22px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #A78BFA, #3B82F6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-label {
+  font-size: 10px;
+  color: #94A3B8;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* --- Footer --- */
+.popup-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px 16px;
+  font-size: 10px;
+  color: #475569;
+}
+
+/* --- Disabled State (master off) --- */
+.popup-container.disabled .platforms-section {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.popup-container.disabled .stats-bar {
+  opacity: 0.35;
+}

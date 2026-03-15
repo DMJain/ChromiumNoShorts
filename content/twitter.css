@@ -1,0 +1,34 @@
+/* ============================================
+   ChromiumNoShorts — X (Twitter) Blocker CSS
+   Only active when html.noshorts-active is set
+   ============================================ */
+
+/* --- "Videos for you" section in Explore --- */
+html.noshorts-active div[data-testid="videoComponent"]:has(~ div[role="button"]) {
+    display: none !important;
+}
+
+/* --- Immersive media viewer (fullscreen video scroll) --- */
+html.noshorts-active div[data-testid="immersive-media-viewer"] {
+    display: none !important;
+}
+
+/* --- Video carousel in explore/trending --- */
+html.noshorts-active section[role="region"]:has(div[data-testid="videoComponent"]) {
+    display: none !important;
+}
+
+/* --- Hide video tab entries that are auto-playing short clips --- */
+html.noshorts-active a[href="/i/videos"] {
+    display: none !important;
+}
+
+/* --- Trending videos section --- */
+html.noshorts-active div[aria-label="Timeline: Trending videos"] {
+    display: none !important;
+}
+
+/* --- Creator content videos section --- */
+html.noshorts-active div[aria-label="Timeline: Videos for You"] {
+    display: none !important;
+}

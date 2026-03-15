@@ -1,0 +1,98 @@
+/* ============================================
+   ChromiumNoShorts — TikTok Blocker CSS
+   Only active when html.noshorts-active is set
+   ============================================ */
+
+/* --- Full-page overlay for TikTok --- */
+html.noshorts-active #noshorts-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2147483647;
+    background: linear-gradient(145deg, #0F0F1A 0%, #1A1A2E 40%, #16213E 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html:not(.noshorts-active) #noshorts-overlay {
+    display: none !important;
+}
+
+#noshorts-overlay .noshorts-overlay-content {
+    text-align: center;
+    max-width: 420px;
+    padding: 40px;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+#noshorts-overlay .noshorts-overlay-icon {
+    font-size: 72px;
+    margin-bottom: 24px;
+    animation: shieldPulse 3s infinite ease-in-out;
+}
+
+#noshorts-overlay h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #E2E8F0;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #A78BFA, #6C3CE1, #3B82F6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#noshorts-overlay p {
+    font-size: 15px;
+    color: #94A3B8;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+#noshorts-overlay .noshorts-overlay-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background: linear-gradient(135deg, rgba(108, 60, 225, 0.2), rgba(59, 130, 246, 0.2));
+    border: 1px solid rgba(108, 60, 225, 0.3);
+    border-radius: 100px;
+    color: #A78BFA;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shieldPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* --- Hide the main feed behind the overlay --- */
+html.noshorts-active [class*="DivBodyContainer"],
+html.noshorts-active [class*="DivVideoFeedV2"],
+html.noshorts-active [data-e2e="recommend-list-item-container"] {
+    filter: blur(20px) !important;
+    pointer-events: none !important;
+}

@@ -1,0 +1,68 @@
+/* ============================================
+   ChromiumNoShorts — YouTube Shorts Blocker CSS
+   Only active when html.noshorts-active is set
+   ============================================ */
+
+/* --- Shorts shelf on homepage, search, subscriptions --- */
+html.noshorts-active ytd-reel-shelf-renderer {
+    display: none !important;
+}
+
+html.noshorts-active ytd-rich-shelf-renderer[is-shorts] {
+    display: none !important;
+}
+
+/* --- Individual Shorts in grids and lists --- */
+html.noshorts-active ytd-rich-item-renderer:has([overlay-style="SHORTS"]) {
+    display: none !important;
+}
+
+html.noshorts-active ytd-grid-video-renderer:has([overlay-style="SHORTS"]) {
+    display: none !important;
+}
+
+html.noshorts-active ytd-video-renderer:has([overlay-style="SHORTS"]) {
+    display: none !important;
+}
+
+html.noshorts-active ytd-compact-video-renderer:has([overlay-style="SHORTS"]) {
+    display: none !important;
+}
+
+/* --- Shorts button in sidebar --- */
+html.noshorts-active ytd-guide-entry-renderer:has(a[title="Shorts"]) {
+    display: none !important;
+}
+
+html.noshorts-active ytd-mini-guide-entry-renderer:has(a[title="Shorts"]) {
+    display: none !important;
+}
+
+/* --- Shorts tab on channel pages --- */
+html.noshorts-active yt-tab-shape[tab-title="Shorts"] {
+    display: none !important;
+}
+
+html.noshorts-active tp-yt-paper-tab:has(.tp-yt-paper-tab:has-text(Shorts)) {
+    display: none !important;
+}
+
+/* --- Shorts player page container --- */
+html.noshorts-active ytd-shorts {
+    display: none !important;
+}
+
+/* --- Shorts notification chips --- */
+html.noshorts-active ytd-rich-section-renderer:has(span:contains("Shorts")) {
+    display: none !important;
+}
+
+/* --- Hide "Shorts remixing this video" section --- */
+html.noshorts-active ytd-reel-shelf-renderer {
+    display: none !important;
+}
+
+/* --- Shorts in search results --- */
+html.noshorts-active ytd-search ytd-reel-shelf-renderer {
+    display: none !important;
+}

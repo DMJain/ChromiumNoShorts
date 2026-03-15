@@ -1,0 +1,30 @@
+/* ============================================
+   ChromiumNoShorts — Instagram Reels Blocker CSS
+   Only active when html.noshorts-active is set
+   ============================================ */
+
+/* --- Reels navigation link --- */
+html.noshorts-active a[href="/reels/"],
+html.noshorts-active a[href*="/reels/"] {
+    display: none !important;
+}
+
+/* --- Reels tab in navigation bar (SVG icon based) --- */
+html.noshorts-active nav a[href="/reels/"] {
+    display: none !important;
+}
+
+/* --- Hide Reels section in Explore --- */
+html.noshorts-active a[href*="/reel/"] {
+    display: none !important;
+}
+
+/* --- Hide suggested Reels in feed (clip icon containers) --- */
+html.noshorts-active div[role="presentation"]:has(a[href*="/reel/"]) {
+    display: none !important;
+}
+
+/* --- Reels overlay (full-screen reel view) --- */
+html.noshorts-active div[style*="position: fixed"]:has(video[src*="reel"]) {
+    display: none !important;
+}

@@ -1,0 +1,47 @@
+/* ============================================
+   ChromiumNoShorts — Facebook Reels Blocker CSS
+   Only active when html.noshorts-active is set
+   ============================================ */
+
+/* --- Reels section in feed (aria-label based) --- */
+html.noshorts-active div[aria-label="Reels"] {
+    display: none !important;
+}
+
+html.noshorts-active div[aria-label="reel"] {
+    display: none !important;
+}
+
+html.noshorts-active div[aria-label="Reels and short videos"] {
+    display: none !important;
+}
+
+/* --- Reels tray/carousel in feed --- */
+html.noshorts-active div[data-pagelet="FeedUnit"]:has(div[aria-label="Reels"]) {
+    display: none !important;
+}
+
+/* --- Reels stories-like tray at top of feed --- */
+html.noshorts-active div[data-pagelet="Stories"]:has(a[href*="/reel/"]) {
+    display: none !important;
+}
+
+/* --- Reels navigation link in sidebar --- */
+html.noshorts-active a[href*="/reel/"] {
+    display: none !important;
+}
+
+html.noshorts-active a[href*="/reels/"] {
+    display: none !important;
+}
+
+/* --- Watch page Reels section --- */
+html.noshorts-active div[data-pagelet*="Reel"],
+html.noshorts-active div[data-pagelet*="reel"] {
+    display: none !important;
+}
+
+/* --- Reels in Watch tab --- */
+html.noshorts-active a[aria-label="Reels"] {
+    display: none !important;
+}

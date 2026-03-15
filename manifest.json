@@ -1,0 +1,57 @@
+{
+  "manifest_version": 3,
+  "name": "ChromiumNoShorts",
+  "version": "1.0.0",
+  "description": "Block doom-scrolling short-form content on YouTube, Instagram, TikTok, X, and Facebook.",
+  "permissions": ["storage", "activeTab"],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "css": ["content/youtube.css"],
+      "js": ["content/shared.js", "content/youtube.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://*.instagram.com/*"],
+      "css": ["content/instagram.css"],
+      "js": ["content/shared.js", "content/instagram.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://*.tiktok.com/*"],
+      "css": ["content/tiktok.css"],
+      "js": ["content/shared.js", "content/tiktok.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://*.twitter.com/*", "*://*.x.com/*"],
+      "css": ["content/twitter.css"],
+      "js": ["content/shared.js", "content/twitter.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://*.facebook.com/*"],
+      "css": ["content/facebook.css"],
+      "js": ["content/shared.js", "content/facebook.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
